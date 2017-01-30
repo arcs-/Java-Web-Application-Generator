@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: biz.stillhart.generator.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: biz.stillhart.generator.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: biz.stillhart.generator,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: biz.stillhart.xtext.ide.contentassist.antlr.internal,
+ biz.stillhart.xtext.ide.contentassist.antlr,
+ biz.stillhart.xtext.ide.contentassist.antlr.lexer
+

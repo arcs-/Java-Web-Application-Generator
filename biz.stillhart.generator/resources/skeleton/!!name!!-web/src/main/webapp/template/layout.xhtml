@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title><ui:insert name="title">!!name!!</ui:insert></title>
+</h:head>
+
+<h:body>
+
+	<div id="navigation">
+		<ui:insert name="navigation">
+			<ui:include src="navi.xhtml" />
+		</ui:insert>
+	</div>
+	
+	<b:growl placementFrom="top"  escape="true" id="messages" />
+	<h:messages style="display:none" />
+
+	<b:container>
+		<ui:insert name="content">
+      		Ups, something went wrong
+    	</ui:insert>
+	</b:container>
+
+</h:body>
+
+</html>

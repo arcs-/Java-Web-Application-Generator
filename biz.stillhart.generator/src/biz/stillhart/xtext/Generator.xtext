@@ -1,0 +1,37 @@
+grammar biz.stillhart.xtext.Generator with org.eclipse.xtext.common.Terminals
+    
+generate generator "http://www.stillhart.biz/xtext/Generator"
+ 
+Domainmodel:
+	Desc;
+    
+Desc: 	
+	'version' version=Version
+	'name' name=Text
+	'domain' domain=QualifiedName
+	('database' database=ID)?
+	
+	(forms+=Form)*;
+    
+QualifiedName:
+    ID ('.' ID)*;
+    
+Version:
+    INT '.' INT '.' INT ;   
+    
+Form:
+    'form' name=ID (table=ID)? BEGIN
+        (fields+=Field)*   
+    END;
+    
+Text:
+	ID | 'name' | 'domain';
+     
+enum DataType:
+	char | string | int | long | boolean;
+	
+Field:
+    (required="!")? name=Text type=DataType;
+    
+terminal BEGIN: 'synthetic:BEGIN';
+terminal END: 'synthetic:END';

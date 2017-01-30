@@ -1,0 +1,7 @@
+.metadata/
+.recommenders/
+Dokuments/
+.svn/
+src-gen/
+xtend-gen/
+bin/
