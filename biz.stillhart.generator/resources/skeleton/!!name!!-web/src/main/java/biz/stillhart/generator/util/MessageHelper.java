@@ -9,11 +9,11 @@ public class MessageHelper {
         FacesContext.getCurrentInstance().addMessage(formId, new FacesMessage(severity, summary, detail));
     }
 
-    public static void createError(String content) {
+    public static void error(String content) {
         create(null, FacesMessage.SEVERITY_ERROR, content, "");
     }
 
-    public static void createInfo(String content) {
+    public static void info(String content) {
         create(null, FacesMessage.SEVERITY_INFO, content, "");
     }
 

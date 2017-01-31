@@ -25,8 +25,8 @@ public class GModelTranslater {
 		String required = (field.getRequired() != null && field.getRequired().equals("!")) ? " required='true'" : "";
 		switch(field.getType()) { 
 			case CHAR: return "type='text' maxlength='1'" + required;
-			case INT: return "type='number'" + required;
-			case LONG: return "type='number'" + required;
+			case INT: return "type='number' min='"+ Integer.MIN_VALUE +"' max='"+ Integer.MAX_VALUE +"'" + required;
+			case LONG: return "type='number' min='"+ Long.MIN_VALUE +"' max='"+ Long.MAX_VALUE +"'" + required;
 			default: return "" + required;
 		}
 	}

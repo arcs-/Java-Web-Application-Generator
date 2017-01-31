@@ -112,7 +112,7 @@ class XHTMLGenerator {
 	'''
 	
 	def compileNewBooleanForm(Form e, Field f) '''
-		<b:selectBooleanCheckbox value="#{«e.name.toFirstLower»Bean.«e.name.toFirstLower».«f.name.toLowerCase»}" caption="«f.name.toFirstUpper»" style="width:30px;height:15px"/>
+		<b:selectBooleanCheckbox value="#{«e.name.toFirstLower»Bean.«e.name.toFirstLower».«f.name.toLowerCase»}" caption="&#160;«f.name.toFirstUpper»" style="width:30px;height:15px"/>
 	'''
 
 	/*

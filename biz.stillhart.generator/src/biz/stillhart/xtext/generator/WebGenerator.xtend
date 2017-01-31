@@ -45,7 +45,7 @@ class WebGenerator {
 		import javax.faces.bean.ViewScoped;
 		
 		import «desc.domain».jpa.«e.name»;
-		import «desc.domain».ejb.beans.«e.name»ServiceBean;
+		import «desc.domain».ejb.interfaces.«e.name»Service;
 		
 		import biz.stillhart.generator.util.MessageHelper;
 		
@@ -65,7 +65,7 @@ class WebGenerator {
 		public class «e.name.toFirstUpper»Bean {
 			
 			@EJB
-			private «e.name.toFirstUpper»ServiceBean «e.name.toFirstLower»Service;
+			private «e.name.toFirstUpper»Service «e.name.toFirstLower»Service;
 			
 			private «e.name.toFirstUpper» «e.name.toFirstLower»;
 			private List<«e.name.toFirstUpper»> «e.name.toFirstLower»s;
@@ -105,7 +105,7 @@ class WebGenerator {
 			 */
 			public void create() {
 				«e.name.toFirstLower»Service.create(«e.name.toFirstLower»);
-				MessageHelper.createInfo("Added a new «e.name.toFirstUpper.replaceAll("([A-Z])", " $1").trim()»");
+				MessageHelper.info("Added a new «e.name.toFirstUpper.replaceAll("([A-Z])", " $1").trim()»");
 				init();
 			}
 			
@@ -115,7 +115,7 @@ class WebGenerator {
 			public void update(«e.name.toFirstUpper» «e.name.toFirstLower») {
 				if(«e.name.toFirstLower».isEditable()) {
 					«e.name.toFirstLower»Service.update(«e.name.toFirstLower»);
-					MessageHelper.createInfo("Updated «e.name.toFirstUpper.replaceAll("([A-Z])", " $1").trim()»");
+					MessageHelper.info("Updated «e.name.toFirstUpper.replaceAll("([A-Z])", " $1").trim()»");
 				}
 				«e.name.toFirstLower».edit();
 			}
@@ -125,7 +125,7 @@ class WebGenerator {
 			 */
 			public void delete(«e.name.toFirstUpper» «e.name.toFirstLower») {
 				«e.name.toFirstLower»Service.delete(«e.name.toFirstLower».getId());
-				MessageHelper.createInfo("Removed «e.name.toFirstUpper.replaceAll("([A-Z])", " $1").trim()»");
+				MessageHelper.info("Removed «e.name.toFirstUpper.replaceAll("([A-Z])", " $1").trim()»");
 				init();
 			}
 			

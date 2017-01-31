@@ -137,7 +137,6 @@ class EJBGenerator {
 			you may not edit this file but rather extend it
 		*/
 		
-		@LocalBean
 		@Stateless
 		@Generated(value = { "http://www.stillhart.biz/xtext/Generator" })
 		public class «e.name.toFirstUpper»ServiceBean implements «e.name»Service {		

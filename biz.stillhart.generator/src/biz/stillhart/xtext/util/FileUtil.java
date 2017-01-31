@@ -39,11 +39,17 @@ public class FileUtil {
 
 		StringBuilder sb = new StringBuilder();
 		try {
-			sb.append(new File(url.toURI()).getParentFile().toString()).append(File.separator).append(PROJECT_NAME)
-					.append(File.separator).append(FOLDER_NAME);
+			sb
+				.append(new File(url.toURI()).getParentFile().toString())
+				.append(File.separator)
+				.append(PROJECT_NAME)
+				.append(File.separator)
+				.append(FOLDER_NAME);
 
 			if (!orig.isEmpty())
-				sb.append(File.separator).append(orig);
+				sb
+					.append(File.separator)
+					.append(orig);
 
 			copyDirectory(new File(sb.toString()), new File(dest));
 
@@ -54,7 +60,15 @@ public class FileUtil {
 
 	}
 
-	// from http://stackoverflow.com/a/5368745/3137109
+	/**
+	 * Copies a folder form source to target
+	 * 
+	 * from http://stackoverflow.com/a/5368745/3137109
+	 * 
+	 * @param source the source folder
+	 * @param target the target folder
+	 * @throws IOException that was no folder with access rights
+	 */
 	private void copyDirectory(File source, File target) throws IOException {
 		if(target.getAbsolutePath().contains("!!")) 
 			target = new File(replaceTemplate(target.getAbsolutePath()));
@@ -99,6 +113,12 @@ public class FileUtil {
 		}
 	}
 
+	/**
+	 * Loads the string reference from the Desc Class associated with the toReplace 
+	 * 
+	 * @param toReplace the key to look for
+	 * @return the corresponding string
+	 */
 	private String replaceTemplate(String toReplace) {
 		try {
 			// get start and end of to replacing string

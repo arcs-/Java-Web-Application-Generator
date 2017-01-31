@@ -32,6 +32,7 @@ class GeneratorGenerator extends AbstractGenerator {
 
 		// setting and getting output directory
 		fileAccess.setOutputPath("src-gen/")
+		
 		val outputPath = moveUp(
 			new File(ResourcesPlugin.workspace.root.getFile(
 				new Path(
